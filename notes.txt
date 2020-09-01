@@ -1,0 +1,24 @@
+comunicazione bluetooth (dedotta dallo sketch neurosky)
+
+2 byte di sincronizzazione
+1 byte di payloadLength (0 < PLL < 170)
+#PLL byte di payload 
+1 byte di checksum
+
+il byte di sincronizzazione vale 170 ovvero "10101010"
+il checksum lo gestisce lo sketch fornito (somma tra byte)
+
+il payload è organizzato in questo modo:
+se il byte letto vale 2, il PROSSIMO byte indica il valore "poorQuality"
+se il byte letto vale 4, il PROSSIMO byte indica il valore "attention"
+se il byte letto vale 5, il PROSSIMO byte indica il valore "meditation"
+se il byte letto vale 0x80, vengono saltati 3 byte
+se il byte letto vale 0x83 vengono saltati 25 byte
+
+
+
+Mode								Stat Blink Rate		Notes
+Configuration						10 per second		Module is in config mode.
+Startup/Config Timer				2 per second		Module is not in config mode, but the configuration timer is still counting.
+Discoverable/Inquiring/Idle			1 per second		Not in config mode, and the config timer has run out.
+
