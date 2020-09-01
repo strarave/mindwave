@@ -2,8 +2,8 @@
 
 long int bluetoothBaud = 115200;
 long int serialBaud = 9600;
-int boardT = 4;
-int boardR = 6;
+int boardT = 4; // TX on the modem
+int boardR = 6; // RX on the modem
 
 SoftwareSerial bluetooth(boardT, boardR);
 
@@ -39,7 +39,6 @@ void loop() {
   
   if(bluetooth.available()){
     // Send any characters the bluetooth prints to the serial monitor
-    serialLog("Bluetooth modem: ");
     Serial.print((char)bluetooth.read());
   }
   

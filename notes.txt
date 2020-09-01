@@ -22,3 +22,6 @@ Configuration						10 per second		Module is in config mode.
 Startup/Config Timer				2 per second		Module is not in config mode, but the configuration timer is still counting.
 Discoverable/Inquiring/Idle			1 per second		Not in config mode, and the config timer has run out.
 
+RESET PROCEDURE: collega ground e PIO4 al pin 13 (sketch resetModem.ino) e quando il led è HIGH alimenta il modem
+
+
