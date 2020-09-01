@@ -1,4 +1,4 @@
-NEUROSKY HEADSET MAC ADDRESS: C4:64:E3:E6:FD:75
+NEUROSKY HEADSET MAC ADDRESS: C4:64:E3:E6:FD:75 C464E3E6FD75
 
 comunicazione bluetooth (dedotta dallo sketch neurosky)
 
