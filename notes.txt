@@ -1,3 +1,5 @@
+NEUROSKY HEADSET MAC ADDRESS: C4:64:E3:E6:FD:75
+
 comunicazione bluetooth (dedotta dallo sketch neurosky)
 
 2 byte di sincronizzazione
@@ -24,4 +26,15 @@ Discoverable/Inquiring/Idle			1 per second		Not in config mode, and the config t
 
 RESET PROCEDURE: collega ground e PIO4 al pin 13 (sketch resetModem.ino) e quando il led è HIGH alimenta il modem
 
+SETUP PROCEDURE FOR BLUETOOTH DONGLE (mindwave-set-specific)
+To put the BlueSMiRF into COMMAND mode, type $$$ -> If successful, you will see “CMD”
+Type: D -> You will see the current configuration of the BlueSMiRF.
+Now type: SP,0000 -> This will change the pincode from '1234' to '0000'
+Now type: SM,3 -> This will configure the BlueSMiRF to Auto-Connect Mode. Once the module is powered up, it will immediately look to connect.
+You should see “AOK” if this is done properly.
+Now type: SR,MAC ADDRESS -> Insert the 12 digit address you copied from the MindWave Mobile.
+Again, look for AOK.
+Now type: SU,57.6 -> This will change the BaudRate from 115200 to 57600
+Type: D -> Check to be sure that the stored address is the Mac address, and it's configure to Auto, not Slave
+Type: — (three minus signs) -> This will exit out of Coolterm. If successful, you will see END.
 
