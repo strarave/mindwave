@@ -14,9 +14,8 @@ void serialLog(String message){
 
 void setup() {
   Serial.begin(serialBaud);
-  serialLog("Serial monitor up");
+  serialLog("Starting bluetooth module");
   bluetooth.begin(bluetoothBaud);
-  serialLog("Started bluetooth");  
 }
 
 void loop() {
